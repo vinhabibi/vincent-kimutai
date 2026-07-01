@@ -229,7 +229,7 @@
     @media (max-width: 700px) { .dashboard-embed iframe { height: 340px; } }
 
     /* House price pipeline canvas */
-    .hp-canvas-scroll{overflow:hidden;margin-bottom:20px}
+    .hp-canvas-scroll{overflow:hidden;margin-bottom:20px;min-height:80px}
     .hp-canvas{position:relative;width:790px;height:300px;margin:0 auto;transform-origin:top center}
     .hp-grid-bg{position:absolute;inset:0;border-radius:8px;background-image:radial-gradient(rgba(244,168,54,0.12) 1px,transparent 1px);background-size:18px 18px;background-color:rgba(0,0,0,0.25);border:1px dashed rgba(255,255,255,0.1)}
     .hp-nnode{position:absolute;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:10px;z-index:2}
@@ -745,7 +745,6 @@
       const char = chars[Math.floor(Math.random() * chars.length)];
       const x = i * fontSize;
       const y = drops[i] * fontSize;
-      // Head of drop is bright white, trail fades to amber
       if (drops[i] < 3) {
         ctx.fillStyle = '#FFFFFF';
       } else {
@@ -761,10 +760,8 @@
   window.addEventListener('resize', init);
   setInterval(draw, 55);
 
-  // Keep canvas behind all content
   document.body.insertBefore(canvas, document.body.firstChild);
 
-  // Trigger Chart.js resize inside iframes after they load
   ['coffeeFrame','warehouseFrame'].forEach(function(id){
     var f = document.getElementById(id);
     if(!f) return;
@@ -776,18 +773,26 @@
     });
   });
 
-  // House price pipeline canvas — scale to fit any screen width
   function hpFitCanvas(){
     var frame = document.getElementById('hpCanvasFrame');
     var inner = document.getElementById('hpCanvasInner');
     if (!frame || !inner) return;
-    var scale = Math.min(1, frame.clientWidth / 790);
+    var w = frame.clientWidth;
+    if (!w) return;
+    var scale = Math.min(1, w / 790);
     inner.style.transform = 'scale(' + scale + ')';
     frame.style.height = (300 * scale) + 'px';
   }
   window.addEventListener('resize', hpFitCanvas);
   window.addEventListener('load', hpFitCanvas);
+  window.addEventListener('pageshow', hpFitCanvas);
   hpFitCanvas();
+  if (window.ResizeObserver) {
+    var hpFrameEl = document.getElementById('hpCanvasFrame');
+    if (hpFrameEl) {
+      new ResizeObserver(hpFitCanvas).observe(hpFrameEl);
+    }
+  }
 </script>
 
 </body>
