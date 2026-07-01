@@ -13,7 +13,6 @@
     a { text-decoration: none; color: inherit; }
     nav, #hero, .section, #contact, footer { position: relative; z-index: 1; }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -27,14 +26,11 @@
     .nav-links a { color: rgba(240,238,232,0.55); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: #F4A836; }
 
-    /* HERO */
     #hero {
       min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
       padding: 120px 48px 80px; max-width: 1100px; margin: 0 auto;
     }
-    .hero-top {
-      display: flex; align-items: flex-start; gap: 48px; margin-bottom: 32px;
-    }
+    .hero-top { display: flex; align-items: flex-start; gap: 48px; margin-bottom: 32px; }
     .hero-avatar {
       flex-shrink: 0; width: 120px; height: 120px; border-radius: 50%;
       background: rgba(255,255,255,0.04);
@@ -88,12 +84,10 @@
     .stat-num { font-family: 'Syne', sans-serif; font-size: 34px; font-weight: 800; color: #F4A836; line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 11px; color: rgba(240,238,232,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
 
-    /* SECTIONS */
     .section { max-width: 1100px; margin: 0 auto; padding: 96px 48px; border-top: 1px solid rgba(255,255,255,0.07); }
     .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #F4A836; margin-bottom: 12px; }
     .section-title { font-family: 'Syne', sans-serif; font-size: 38px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 52px; }
 
-    /* SKILLS */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
     .skill-card { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 24px; transition: border-color 0.2s, background 0.2s; }
     .skill-card:hover { border-color: rgba(244,168,54,0.35); background: rgba(244,168,54,0.04); }
@@ -101,7 +95,6 @@
     .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
     .skill-pill { font-size: 12px; padding: 4px 10px; border-radius: 3px; background: rgba(255,255,255,0.07); color: rgba(240,238,232,0.75); }
 
-    /* PROJECTS */
     .project-card {
       background: rgba(255,255,255,0.025);
       border: 1px solid rgba(255,255,255,0.07);
@@ -122,7 +115,6 @@
     .project-link-btn:hover { background: rgba(244,168,54,0.1); border-color: #F4A836; }
     .project-desc { font-size: 14px; color: rgba(240,238,232,0.5); line-height: 1.7; margin-bottom: 24px; }
 
-    /* Project insight panels */
     .project-insights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
     .insight-panel {
       background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06);
@@ -137,7 +129,6 @@
       font-style: italic;
     }
 
-    /* Viz placeholder */
     .viz-placeholder {
       background: rgba(0,0,0,0.25); border: 1px dashed rgba(255,255,255,0.1);
       border-radius: 8px; height: 160px;
@@ -147,7 +138,6 @@
     .viz-placeholder-icon { font-size: 28px; opacity: 0.4; }
     .viz-placeholder-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
 
-    /* Static app screenshot frame */
     .app-frame {
       display: block; margin-bottom: 20px; border-radius: 8px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08); background: #14120e;
@@ -177,7 +167,6 @@
     }
     .tag-dim { opacity: 0.35; }
 
-    /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     .about-text { font-size: 16px; line-height: 1.8; color: rgba(240,238,232,0.65); }
     .about-text p { margin-bottom: 22px; }
@@ -186,7 +175,6 @@
     .fact-val { color: #F0EEE8; font-weight: 500; }
     .fact-val.accent { color: #F4A836; }
 
-    /* CONTACT */
     #contact { border-top: 1px solid rgba(255,255,255,0.07); text-align: center; padding: 120px 48px; }
     .contact-big { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 24px; }
     .contact-sub { font-size: 16px; color: rgba(240,238,232,0.45); margin-bottom: 48px; }
@@ -217,7 +205,6 @@
       #contact { padding: 80px 24px; }
     }
 
-    /* Dashboard iframe wrapper */
     .dashboard-embed {
       border-radius: 10px; overflow: hidden;
       border: 1px solid rgba(244,168,54,0.2);
@@ -228,7 +215,6 @@
     }
     @media (max-width: 700px) { .dashboard-embed iframe { height: 340px; } }
 
-    /* House price pipeline canvas */
     .hp-canvas-scroll{overflow:hidden;margin-bottom:20px;min-height:80px}
     .hp-canvas{position:relative;width:790px;height:300px;margin:0 auto;transform-origin:top center}
     .hp-grid-bg{position:absolute;inset:0;border-radius:8px;background-image:radial-gradient(rgba(244,168,54,0.12) 1px,transparent 1px);background-size:18px 18px;background-color:rgba(0,0,0,0.25);border:1px dashed rgba(255,255,255,0.1)}
@@ -265,7 +251,6 @@
   <div id="hero">
     <div class="hero-eyebrow">Available for internships &amp; roles</div>
     <div class="hero-top">
-      <!-- Profile picture placeholder -->
       <div class="hero-avatar" title="Add profile photo">
         <div class="hero-avatar-icon">📷</div>
         <div class="hero-avatar-label">Add Photo</div>
@@ -281,13 +266,12 @@
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="stat-num">7+</div><div class="stat-label">Projects shipped</div></div>
+      <div class="hero-stat"><div class="stat-num">6</div><div class="stat-label">Projects shipped</div></div>
       <div class="hero-stat"><div class="stat-num">3</div><div class="stat-label">ML paradigms</div></div>
       <div class="hero-stat"><div class="stat-num">6hrs</div><div class="stat-label">Teaching weekly</div></div>
     </div>
   </div>
 
-  <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="section-label">What I work with</div>
     <h2 class="section-title">Skills &amp; Tools</h2>
@@ -338,12 +322,10 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="section-label">What I've built</div>
     <h2 class="section-title">Featured Projects</h2>
 
-    <!-- 01 GHG -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -376,7 +358,6 @@
       </div>
     </div>
 
-    <!-- 02 Banknote -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -409,7 +390,6 @@
       </div>
     </div>
 
-    <!-- 03 House Price -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -508,7 +488,6 @@
       </div>
     </div>
 
-    <!-- 04 Coffee Sales -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -550,7 +529,6 @@
       </div>
     </div>
 
-    <!-- 05 Warehouse -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -593,7 +571,6 @@
       </div>
     </div>
 
-    <!-- 06 Billing System -->
     <div class="project-card">
       <div class="project-card-header">
         <div class="project-card-meta">
@@ -632,60 +609,8 @@
       </div>
     </div>
 
-    <!-- 07 Verdra -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div class="project-card-meta">
-          <span class="project-num">07</span>
-          <span class="project-name">Verdra — Shopping App</span>
-        </div>
-        <a class="project-link-btn" href="https://github.com/Maria-Wangari/Verdra1-Shopping" target="_blank">GitHub →</a>
-      </div>
-      <p class="project-desc">Collaborative shopping app project. Full app development with a clean UI and product browsing experience.</p>
-      <div class="viz-placeholder">
-        <div class="viz-placeholder-icon">📱</div>
-        <div class="viz-placeholder-label">Add app screenshot here</div>
-      </div>
-      <div class="project-insights">
-        <div class="insight-panel">
-          <div class="insight-panel-label">What I Learnt</div>
-          <div class="insight-panel-content">Add your key learnings — e.g. collaborative development, UI/UX principles, version control in teams.</div>
-        </div>
-        <div class="insight-panel">
-          <div class="insight-panel-label">Impact</div>
-          <div class="insight-panel-content">Add the impact — e.g. client project, team collaboration outcome.</div>
-        </div>
-        <div class="insight-panel">
-          <div class="insight-panel-label">Skills Gained</div>
-          <div class="insight-panel-content">Add skills — e.g. app development, Git collaboration, agile teamwork.</div>
-        </div>
-      </div>
-      <div class="project-tags">
-        <span class="tag">App Dev</span><span class="tag">Collaboration</span>
-      </div>
-    </div>
-
-    <!-- 09 Medical Insurance Claims -->
-    <div class="project-card" style="opacity:0.45;">
-      <div class="project-card-header">
-        <div class="project-card-meta">
-          <span class="project-num">08</span>
-          <span class="project-name">Medical Insurance Claims Analysis — Coming Soon</span>
-        </div>
-      </div>
-      <p class="project-desc">EDA and fraud detection on medical insurance claims data. XGBoost + SHAP to identify anomalous claims patterns — bridging fintech and health data science.</p>
-      <div class="project-tags">
-        <span class="tag tag-dim">XGBoost</span>
-        <span class="tag tag-dim">SHAP</span>
-        <span class="tag tag-dim">Health</span>
-        <span class="tag tag-dim">EDA</span>
-        <span class="tag tag-dim">In Progress</span>
-      </div>
-    </div>
-
   </section>
 
-  <!-- ABOUT -->
   <section class="section" id="about">
     <div class="section-label">Who I am</div>
     <h2 class="section-title">About Me</h2>
@@ -707,7 +632,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <div id="contact">
     <div class="contact-big">Let's work<br>together<span style="color:#F4A836;">.</span></div>
     <p class="contact-sub">Open to internships, collaborations, and interesting data problems.</p>
